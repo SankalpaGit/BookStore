@@ -1,8 +1,13 @@
-#This is the url in the django project
+# urls.py (of the Django project)
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('api.urls'))
+    path('', include('api.urls')),  # Note the '/api/' prefix to route API requests
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
