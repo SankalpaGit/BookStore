@@ -41,6 +41,7 @@ CORS_ALLOWED_ORIGINS =[
     'http://localhost:5173'
 ]
 
+
 ROOT_URLCONF = 'crud.urls'
 
 TEMPLATES = [
@@ -64,7 +65,7 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'practise',
+        'NAME': 'api',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

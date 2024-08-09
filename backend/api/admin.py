@@ -4,7 +4,6 @@ from .models import Books, Donation
 # Register your models here.
 admin.site.register(Books)
 
-# Custom admin for Donation model
 @admin.register(Donation)
 class DonationAdmin(admin.ModelAdmin):
     list_display = ('name', 'author', 'published_Date', 'availability_status')
@@ -15,7 +14,9 @@ class DonationAdmin(admin.ModelAdmin):
         return False
 
     def has_change_permission(self, request, obj=None):
-        # Prevent the admin from editing donations
+        # Allow changes only for actions, but not direct editing
+        if obj is None:
+            return True  # Allow change permissions for listing and actions
         return False
 
     def accept_donation(self, request, queryset):
@@ -36,3 +37,5 @@ class DonationAdmin(admin.ModelAdmin):
     def reject_donation(self, request, queryset):
         queryset.delete()
         self.message_user(request, "Selected donations have been rejected and deleted.")
+
+

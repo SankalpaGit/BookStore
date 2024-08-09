@@ -2,6 +2,7 @@ from django.db import models # type: ignore
 
 # Create your models here.
 
+
 class Books(models.Model):
     name = models.CharField(max_length=25, unique=True)
     author = models.CharField(max_length=25)
