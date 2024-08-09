@@ -8,7 +8,7 @@ BookStore is the web based system where user can book the favourite books from s
 
 ### Developer
 Sankalpa Shrestha 
-[@SankalpaGit](github.com/SankalpaGit/)
+[@SankalpaGit](https://github.com/SankalpaGit/)
 
 (React.js | Django | Next.js)## Overview
 
