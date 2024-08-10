@@ -22,6 +22,8 @@ Sankalpa Shrestha
 
 ## API References
 
+### books API
+
 | HTTP Method | Endpoint       | Description                         |
 |-------------|----------------|-------------------------------------|
 | GET         | `/books/`      | Retrieve a list of all books        |
@@ -30,4 +32,19 @@ Sankalpa Shrestha
 | PUT         | `/books/{id}/` | Update details of an existing book  |
 | DELETE      | `/books/{id}/` | Delete a book                       |
 
+### donation API
 
+| HTTP Method | Endpoint       | Description                         |
+|-------------|----------------|-------------------------------------|
+| GET         | `/donations/`      | Retrieve a list of all donations        |
+| POST        | `/donations/`      | Create a new donation                   |
+| GET         | `/donations/{id}/` | Retrieve details of a specific donation |
+| PUT         | `/donations/{id}/` | Update details of an existing donation  |
+| DELETE      | `/donations/{id}/` | Delete a donation                     |
+
+
+## Action of the user ( Admin and normal users)
+
+| Admin |  Add delete edit books, accept ot reject donations     |
+|-------------|-------------------------------------|
+| Accept       | donate book, view the book list        |

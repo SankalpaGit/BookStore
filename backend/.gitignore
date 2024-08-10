@@ -12,3 +12,6 @@ crud/__pycache__
 crud/__init__.py
 
 db.sqlite3
+
+#media files
+media/
