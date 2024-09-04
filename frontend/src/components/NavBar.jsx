@@ -1,47 +1,60 @@
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-function NavBar() {
-  const location = useLocation();
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="bg-gray-900 p-4 flex justify-between">
-      <ul className="flex space-x-4">
-        <li>
-          <Link
-            to="/"
-            className={`${location.pathname === '/' ? 'font-bold text-green-500' : 'text-gray-50'}`}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/donate"
-            className={` ${location.pathname === '/donate' ? 'font-bold text-green-500' : 'text-gray-50'}`}
-          >
-            Donate
-          </Link>
-        </li>
-      </ul>
-      <div className="flex justify-between w-1/12 mr-2">
-
-        <button className="text-white ">
-          <Link to="/register" 
-          className={` ${location.pathname === '/register' ? 'font-bold text-green-500' : 'text-gray-50'}`}>
-            Register
-          </Link>
-        </button>
-        
-        <button className="text-white ">
-          <Link to="/login" 
-          className={` ${location.pathname === '/login' ? 'font-bold text-green-500' : 'text-gray-50'}`}>
-            Login
-          </Link>
-        </button>
+    <nav className="bg-blue-800 text-white">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="text-2xl font-bold">Bookstore</div>
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>
+            {isOpen ? <FaTimes className="h-8 w-8" /> : <FaBars className="h-8 w-8" />}
+          </button>
+        </div>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex md:space-x-6">
+          <li className="py-2">
+            <a href="#" className="text-white hover:text-gray-300">Home</a>
+          </li>
+          <li className="py-2">
+            <a href="#" className="text-white hover:text-gray-300">About</a>
+          </li>
+          <li className="py-2">
+            <a href="#" className="text-white hover:text-gray-300">Shop</a>
+          </li>
+          <li className="py-2">
+            <a href="#" className="text-white hover:text-gray-300">Contact</a>
+          </li>
+        </ul>
+        {/* Mobile Menu */}
+        <div className={`md:hidden fixed inset-y-0 right-0 bg-blue-800 w-11/12 max-w-sm z-40 ${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-center transition-transform duration-300 ease-in-out`}>
+          <button onClick={toggleMenu} className="absolute top-4 right-4">
+            <FaTimes className="h-8 w-8 text-white" />
+          </button>
+          <ul className="flex flex-col space-y-4">
+            <li>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Home</a>
+            </li>
+            <li>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>About</a>
+            </li>
+            <li>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Shop</a>
+            </li>
+            <li>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-
     </nav>
   );
-}
+};
 
-export default NavBar;
+export default Navbar;

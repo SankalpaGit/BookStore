@@ -7,6 +7,5 @@ from rest_framework.routers import DefaultRouter
 router= DefaultRouter()
 
 router.register('books', BookViewSet, basename='books')
-router.register('donations', DonationViewSet, basename='donations')
 
 urlpatterns = router.urls

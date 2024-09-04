@@ -43,7 +43,3 @@ class BookViewSet(viewsets.ViewSet):
         books.delete()
         return Response(status=204)
     
-
-class DonationViewSet(viewsets.ModelViewSet):
-    queryset = Donation.objects.all()
-    serializer_class = DonationSerializer

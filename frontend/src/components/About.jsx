@@ -1,114 +1,51 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const DonateBookForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        author: '',
-        published_Date: '',
-        description: '',
-        ISBN: '',
-        stock: 1,
-        booksImg: null
-    });
+const About = () => {
+  return (
+    <div className="container mx-auto px-4 py-12 space-y-12">
+      
+      {/* Section 1: Full-Width Background Image with Text */}
+      <section className="relative h-96 bg-cover bg-center text-white flex items-center justify-center" style={{ backgroundImage: 'url(https://miro.medium.com/v2/resize:fit:1200/1*6Jp3vJWe7VFlFHZ9WhSJng.jpeg)' }}>
+        <div className="bg-black bg-opacity-50 p-8 rounded-lg">
+          <h1 className="text-5xl font-bold mb-4 text-center">Welcome to Our Bookstore</h1>
+          <p className="text-xl text-center">Your journey to discover and explore the world of books starts here.</p>
+        </div>
+      </section>
+      
+      {/* Section 2: Mission */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img className="w-full h-full object-cover rounded-lg shadow-lg" src="https://www.nli.ie/sites/default/files/styles/event_large_large/public/2022-10/nli-oct-screen-res-56.jpg?h=78aab1d8&itok=8MZedc6a" alt="Books" />
+        </div>
+        <div>
+          <h2 className="text-3xl font-semibold text-blue-800 mb-4">Our Mission</h2>
+          <p className="text-lg text-gray-700 mb-4">
+            Our mission is to make books accessible to everyone, everywhere, at any time. We believe in the transformative power of reading and aim to foster a love for books across all ages and backgrounds. Whether you're seeking knowledge, entertainment, or inspiration, our carefully curated collection is designed to meet your needs.
+          </p>
+          <p className="text-lg text-gray-700">
+            We are committed to providing a seamless and enjoyable shopping experience, from browsing our vast selection to receiving your books at your doorstep. By bridging the gap between readers and the literature they love, we strive to create a global community of empowered and informed individuals.
+          </p>
+        </div>
+      </section>
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
+      {/* Section 3: Vision */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
+        <div className="order-last md:order-first">
+          <h2 className="text-3xl font-semibold text-blue-800 mb-4">Our Vision</h2>
+          <p className="text-lg text-gray-700 mb-4">
+            Our vision is to empower minds, one book at a time. We envision a world where every individual has access to the knowledge and stories that can help them grow, learn, and succeed. By expanding our reach and constantly evolving our platform, we aspire to be the leading online destination for book lovers around the globe.
+          </p>
+          <p className="text-lg text-gray-700">
+            We believe in the importance of fostering literacy and education, and our long-term goal is to contribute to a more informed and enlightened society. Through our commitment to quality, diversity, and accessibility, we hope to inspire a lifelong passion for reading in every corner of the world.
+          </p>
+        </div>
+        <div>
+          <img className="w-full h-full object-cover rounded-lg " src="https://www.dorsetonline.co.uk/theme-content/uploads/2020/07/library-books.jpg" alt="Vision" />
+        </div>
+      </section>
 
-    const handleFileChange = (e) => {
-        setFormData({
-            ...formData,
-            booksImg: e.target.files[0]
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const data = new FormData();
-        Object.keys(formData).forEach(key => {
-            data.append(key, formData[key]);
-        });
-
-        axios.post('http://localhost:8000/donations/', data, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
-            .then(response => {
-                console.log('Donation successful', response.data);
-            })
-            .catch(error => {
-                console.error('There was an error submitting the donation!', error);
-            });
-    };
-
-    return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
-            <input 
-                type="text" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                placeholder="Book Name" 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <input 
-                type="text" 
-                name="author" 
-                value={formData.author} 
-                onChange={handleChange} 
-                placeholder="Author" 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <input 
-                type="date" 
-                name="published_Date" 
-                value={formData.published_Date} 
-                onChange={handleChange} 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <textarea 
-                name="description" 
-                value={formData.description} 
-                onChange={handleChange} 
-                placeholder="Description" 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            ></textarea>
-            <input 
-                type="text" 
-                name="ISBN" 
-                value={formData.ISBN} 
-                onChange={handleChange} 
-                placeholder="ISBN" 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <input 
-                type="number" 
-                name="stock" 
-                value={formData.stock} 
-                onChange={handleChange} 
-                min="1" 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <input 
-                type="file" 
-                name="booksImg" 
-                onChange={handleFileChange} 
-                className="w-full mb-4 p-2 border border-gray-300 rounded"
-            />
-            <button 
-                type="submit" 
-                className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-            >
-                Donate Book
-            </button>
-        </form>
-    );
+    </div>
+  );
 };
 
-export default DonateBookForm;
+export default About;
