@@ -1,26 +1,44 @@
-// src/App.js
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
-import NavBar from "./components/NavBar";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Footer from "./components/Footer";
+import Shop from "./components/Shop";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+    <Routes>
+      {/* Routes with NavBar and Footer */}
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Home />
+          </Layout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <Layout>
+            <About />
+          </Layout>
+        }
+      />
+      <Route
+        path="/shop"
+        element={
+          <Layout>
+            <Shop />
+          </Layout>
+        }
+      />
 
-      <Footer/>
-    </>
+      {/* Routes without NavBar and Footer */}
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 

@@ -19,10 +19,10 @@ const About = () => {
         </div>
         <div>
           <h2 className="text-3xl font-semibold text-blue-800 mb-4">Our Mission</h2>
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-lg text-gray-700 mb-4 text-justify">
             Our mission is to make books accessible to everyone, everywhere, at any time. We believe in the transformative power of reading and aim to foster a love for books across all ages and backgrounds. Whether you're seeking knowledge, entertainment, or inspiration, our carefully curated collection is designed to meet your needs.
           </p>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 text-justify">
             We are committed to providing a seamless and enjoyable shopping experience, from browsing our vast selection to receiving your books at your doorstep. By bridging the gap between readers and the literature they love, we strive to create a global community of empowered and informed individuals.
           </p>
         </div>
@@ -31,11 +31,11 @@ const About = () => {
       {/* Section 3: Vision */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
         <div className="order-last md:order-first">
-          <h2 className="text-3xl font-semibold text-blue-800 mb-4">Our Vision</h2>
-          <p className="text-lg text-gray-700 mb-4">
+          <h2 className="text-3xl font-semibold text-blue-800 ">Our Vision</h2>
+          <p className="text-lg text-gray-700 mb-4 text-justify">
             Our vision is to empower minds, one book at a time. We envision a world where every individual has access to the knowledge and stories that can help them grow, learn, and succeed. By expanding our reach and constantly evolving our platform, we aspire to be the leading online destination for book lovers around the globe.
           </p>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 text-justify">
             We believe in the importance of fostering literacy and education, and our long-term goal is to contribute to a more informed and enlightened society. Through our commitment to quality, diversity, and accessibility, we hope to inspire a lifelong passion for reading in every corner of the world.
           </p>
         </div>
