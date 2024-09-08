@@ -22,21 +22,23 @@ const Navbar = () => {
         <ul className="hidden md:flex md:space-x-6">
           <li className="py-2">
             <Link to="/">
-            <a className="text-white hover:text-gray-300">Home</a>
+              <a className="text-white hover:text-gray-300">Home</a>
             </Link>
           </li>
           <li className="py-2">
             <Link to="/about">
-            <a  className="text-white hover:text-gray-300">About</a>
+              <a className="text-white hover:text-gray-300">About</a>
             </Link>
           </li>
           <li className="py-2">
             <Link to="/shop">
-            <a  className="text-white hover:text-gray-300">Shop</a>
+              <a className="text-white hover:text-gray-300">Shop</a>
             </Link>
           </li>
           <li className="py-2">
-            <a href="#" className="text-white hover:text-gray-300">Contact</a>
+            <Link to="/contact">
+              <a className="text-white hover:text-gray-300">Cart</a>
+            </Link>
           </li>
         </ul>
         {/* Mobile Menu */}
@@ -46,22 +48,22 @@ const Navbar = () => {
           </button>
           <ul className="flex flex-col space-y-4">
             <li>
-            <Link to="/">
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Home</a>
-            </Link>
+              <Link to="/">
+                <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Home</a>
+              </Link>
             </li>
             <li>
-            <Link to="/about">
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>About</a>
+              <Link to="/about">
+                <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>About</a>
               </Link>
             </li>
             <li>
               <Link to="/shop">
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Shop</a>
+                <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Shop</a>
               </Link>
             </li>
             <li>
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Contact</a>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Cart</a>
             </li>
           </ul>
         </div>

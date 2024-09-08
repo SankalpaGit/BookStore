@@ -15,7 +15,7 @@ const Home = () => {
 
 
       {/* Featured Books Section */}
-      <section className="py-16 px-4 sm:px-8 lg:px-16">
+      <section className="py-10 px-4 sm:px-8 lg:px-16">
         <h2 className="text-3xl font-bold text-center mb-8">Featured Books</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Example Book Card */}
@@ -30,8 +30,8 @@ const Home = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 bg-gray-200 px-4 sm:px-8 lg:px-16">
-        <h2 className="text-3xl font-bold text-center mb-8">Browse by Category</h2>
+      <section className="py-10 bg-gray-200 px-4 sm:px-8 lg:px-16">
+        <h2 className="text-3xl font-bold  mb-3">Browse by Publisher</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Example Category Card */}
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">

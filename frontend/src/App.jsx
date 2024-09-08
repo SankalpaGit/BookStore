@@ -5,32 +5,33 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Shop from "./components/Shop";
 import Layout from "./components/Layout";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <Routes>
       {/* Routes with NavBar and Footer */}
-      <Route
-        path="/"
-        element={
+      <Route path="/" element={
           <Layout>
             <Home />
           </Layout>
         }
       />
-      <Route
-        path="/about"
-        element={
+      <Route path="/about" element={
           <Layout>
             <About />
           </Layout>
         }
       />
-      <Route
-        path="/shop"
-        element={
+      <Route path="/shop" element={
           <Layout>
             <Shop />
+          </Layout>
+        }
+      />
+      <Route path="/contact" element={
+          <Layout>
+            <Contact />
           </Layout>
         }
       />
