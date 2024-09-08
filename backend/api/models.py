@@ -10,7 +10,7 @@ class Books(models.Model):
     ISBN = models.CharField(max_length=13, unique=True)  # Ensure ISBN is unique
     stock = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)  # Category of the book
+    category = models.CharField(max_length=20,choices=[('Action', 'Action'), ('Romantic', 'Romantic'), ('Comic', 'Comic')], blank=True, null=True)  # Category of the book
 
     # Optional fields
     description = models.TextField(blank=True, null=True)  # Optional description
@@ -24,7 +24,6 @@ class Books(models.Model):
 
     # Additional fields for e-commerce
     discount_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)  # Average user rating
 
     def availability_status(self):
         return "Available" if self.is_available else "Out of Stock"
