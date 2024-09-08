@@ -37,6 +37,11 @@ const Navbar = () => {
           </li>
           <li className="py-2">
             <Link to="/contact">
+              <a className="text-white hover:text-gray-300">Contact</a>
+            </Link>
+          </li>
+          <li className="py-2">
+            <Link to="/cart">
               <a className="text-white hover:text-gray-300">Cart</a>
             </Link>
           </li>
@@ -61,6 +66,9 @@ const Navbar = () => {
               <Link to="/shop">
                 <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Shop</a>
               </Link>
+            </li>
+            <li>
+              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Contact</a>
             </li>
             <li>
               <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Cart</a>

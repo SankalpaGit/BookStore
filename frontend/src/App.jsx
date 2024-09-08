@@ -6,34 +6,42 @@ import Login from "./components/Login";
 import Shop from "./components/Shop";
 import Layout from "./components/Layout";
 import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 
 function App() {
   return (
     <Routes>
       {/* Routes with NavBar and Footer */}
       <Route path="/" element={
-          <Layout>
-            <Home />
-          </Layout>
-        }
+        <Layout>
+          <Home />
+        </Layout>
+      }
       />
       <Route path="/about" element={
-          <Layout>
-            <About />
-          </Layout>
-        }
+        <Layout>
+          <About />
+        </Layout>
+      }
       />
       <Route path="/shop" element={
-          <Layout>
-            <Shop />
-          </Layout>
-        }
+        <Layout>
+          <Shop />
+        </Layout>
+      }
       />
       <Route path="/contact" element={
-          <Layout>
-            <Contact />
-          </Layout>
-        }
+        <Layout>
+          <Contact />
+        </Layout>
+      }
+      />
+
+      <Route path="/cart" element={
+        <Layout>
+          <Cart />
+        </Layout>
+      }
       />
 
       {/* Routes without NavBar and Footer */}
