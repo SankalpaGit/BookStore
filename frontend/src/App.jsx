@@ -7,6 +7,7 @@ import Shop from "./components/Shop";
 import Layout from "./components/Layout";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -40,6 +41,13 @@ function App() {
       <Route path="/cart" element={
         <Layout>
           <Cart />
+        </Layout>
+      }
+      />
+
+      <Route path="/profile" element={
+        <Layout>
+          < Profile />
         </Layout>
       }
       />

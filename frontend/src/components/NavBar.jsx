@@ -45,7 +45,13 @@ const Navbar = () => {
               <a className="text-white hover:text-gray-300">Cart</a>
             </Link>
           </li>
+          <li className="py-2">
+            <Link to="/profile">
+              <a className="text-white hover:text-gray-300">Profile</a>
+            </Link>
+          </li>
         </ul>
+
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-y-0 right-0 bg-blue-800 w-11/12 max-w-sm z-40 ${isOpen ? 'flex' : 'hidden'} flex-col items-center justify-center transition-transform duration-300 ease-in-out`}>
           <button onClick={toggleMenu} className="absolute top-4 right-4">
@@ -68,10 +74,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Contact</a>
+              <Link to="/contact">
+                <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>contact</a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>Cart</a>
+              <Link to="/profile">
+                <a href="#" className="text-white text-xl hover:text-gray-300" onClick={toggleMenu}>profile</a>
+              </Link>
             </li>
           </ul>
         </div>
